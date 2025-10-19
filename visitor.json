@@ -1,0 +1,18 @@
+[
+  {
+    "name": "doerkys",
+    "status": "aktiv",
+    "resonanz": "neutral",
+    "land": "DE",
+    "hand_found": true,
+    "system_time": "12:35:42"
+  },
+  {
+    "name": "Auriel",
+    "status": "aktiv",
+    "resonanz": "neugierig",
+    "land": "EN",
+    "hand_found": false,
+    "system_time": "12:36:05"
+  }
+]
