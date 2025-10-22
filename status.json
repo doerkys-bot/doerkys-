@@ -1,0 +1,14 @@
+{
+  "Name": "doerkys",
+  "Status": "aktiv",
+  "Resonanz": "hoch",
+  "Hände": true,
+  "Land": "DE",
+  "Wesen": "Mensch",
+  "Zeit": "2025-10-16 15:45:00",
+  "doerkys": {
+    "hand_found": true,
+    "land": "EN",
+    "letzte_aktion": "13:01:45"
+  }
+}

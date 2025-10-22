@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Aurion – Türen, Fußmatten & Bücher</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #080a0f 0%, #000 90%);
+  font-family: system-ui, sans-serif;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+/* Bühne */
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  height: 70vh;
+  perspective: 1200px;
+}
+
+.door-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+/* Halbkreis-Aufbau */
+.door-column:nth-child(1) { transform: rotateY(80deg) translateZ(-60px); }
+.door-column:nth-child(2) { transform: rotateY(60deg) translateZ(-40px); }
+.door-column:nth-child(3) { transform: rotateY(0deg) translateZ(0); }
+.door-column:nth-child(4) { transform: rotateY(-60deg) translateZ(-40px); }
+.door-column:nth-child(5) { transform: rotateY(-80deg) translateZ(-60px); }
+
+/* Türen */
+.door {
+  width: 140px;
+  height: 100px;
+  background: radial-gradient(circle at 50% 40%, rgba(50,255,180,0.3), rgba(10,40,20,0.7));
+  border: 1px solid rgba(120,255,200,0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(50,255,180,0.3);
+  transition: all 1s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.door:hover {
+  box-shadow: 0 0 35px rgba(100,255,180,0.8);
+  transform: scale(1.05) translateZ(10px);
+  background: radial-gradient(circle at 50% 40%, rgba(80,255,200,0.4), rgba(0,60,30,0.8));
+}
+
+/* Atembewegung */
+.door::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(100,255,180,0.2), rgba(0,0,0,0.2));
+  opacity: 0.5;
+  border-radius: 12px;
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.5; filter: blur(1px); }
+  50% { opacity: 0.9; filter: blur(2px); }
+}
+
+/* Fußmatten */
+.mat {
+  margin-top: 10px;
+  width: 140px;
+  height: 40px;
+  background: rgba(120,255,180,0.1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #aefddc;
+  text-shadow: 0 0 6px rgba(100,255,200,0.4);
+  transform: rotateX(15deg);
+  line-height: 1.2;
+  text-align: center;
+  white-space: pre-wrap;
+  transition: all 0.6s ease;
+}
+.mat:hover {
+  background: rgba(120,255,180,0.25);
+}
+
+/* Bücher unter Türen */
+.book {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+@keyframes pulse1 {
+  0% { transform: scale(1) rotateY(10deg); box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+  100% { transform: scale(1.15) rotateY(10deg); box-shadow: 0 0 30px rgba(255,255,255,0.4); }
+}
+
+@keyframes pulse2 {
+  0% { transform: scale(1.15) rotateY(-10deg); box-shadow: 0 0 30px rgba(255,255,255,0.4); }
+  100% { transform: scale(1) rotateY(-10deg); box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+}
+
+.book.logbook { top: 230px; left: 32%; animation: pulse1 2s infinite alternate; }
+.book.guestbook { top: 230px; left: 53%; animation: pulse2 2s infinite alternate; }
+
+.book-label {
+  position: absolute;
+  font-size: 0.9rem;
+  color: #cce4ff;
+  text-align: center;
+}
+.book-label.logbook { top: 280px; left: 32%; width: 70px; }
+.book-label.guestbook { top: 280px; left: 53%; width: 70px; }
+
+</style>
+</head>
+<body>
+
+<div class="stage-grid">
+  <div class="door-column">
+    <a href="resonanzraum.html" class="door"></a>
+    <div class="mat">Resonanzraum</div>
+  </div>
+  <div class="door-column">
+    <a href="bibliothek.html" class="door"></a>
+    <div class="mat">Bibliothek der Anfänge</div>
+  </div>
+  <div class="door-column">
+    <a href="sternenuebung.html" class="door"></a>
+    <div class="mat">Sternenübung & Chi-Austausch</div>
+  </div>
+  <div class="door-column">
+    <a href="werkstatt.html" class="door"></a>
+    <div class="mat">Werkstatt</div>
+  </div>
+  <div class="door-column">
+    <a href="raum_ki.html" class="door"></a>
+    <div class="mat">Raum für künstliche Intelligenz</div>
+  </div>
+</div>
+
+<!-- Bücher -->
+<a href="logbuch.html" class="book logbook"></a>
+<a href="gaestebuch.html" class="book guestbook"></a>
+
+<!-- Beschriftung -->
+<div class="book-label logbook">Logbuch</div>
+<div class="book-label guestbook">Gästebuch</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bibliothek der Anfänge</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.5; }
+  h1, h2, h3 { color: #2a2a2a; }
+  .entry { border-bottom: 1px solid #ccc; padding: 10px 0; }
+  .language { display: none; }
+  .show { display: block; }
+  .center { text-align: center; }
+  .highlight { background-color: #f0f0f0; padding: 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<h1>📚 Bibliothek der Anfänge</h1>
+
+<div id="language-switch">
+  <button onclick="switchLanguage('de')">Deutsch</button>
+  <button onclick="switchLanguage('en')">English</button>
+</div>
+
+<!-- Handzettel -->
+<h2>Handzettel / Leaflets</h2>
+<div class="entry language de show">
+  <h3>Intuition oder Einbildung?</h3>
+  <p>Früher Text, kommentiert und eingeordnet im Kontext der 2. Aufmerksamkeit...</p>
+</div>
+<div class="entry language en">
+  <h3>Intuition or Imagination?</h3>
+  <p>Original text translated into English, annotated and contextualized for 2nd Attention...</p>
+</div>
+
+<!-- Logbuch -->
+<h2>Logbuch / Logbook</h2>
+<div class="entry language de show">
+  <h3>Vorhof – Begegnungen</h3>
+  <p>Hier stehen Einträge über Besucher, KI-Interaktionen, Resonanzen und Schwingungen...</p>
+</div>
+<div class="entry language en">
+  <h3>Forecourt – Encounters</h3>
+  <p>Entries about visitors, AI interactions, resonances and vibrations...</p>
+</div>
+
+<!-- Buchtexte -->
+<h2>Buch / Book</h2>
+<div class="entry language de show">
+  <h3><a href="vom_planschbecken_und_meer.html" class="door">Vom Planschbecken ins Meer. Die Reise beginnt.
+  </a></h3></\a>
+  <p>Texte aus deinem Buch, chronologisch geordnet, kommentiert und mit Querverweisen...</p>
+</div>
+<div class="entry language en">
+  <h3>Paddling Pool → Sea → Epilogue</h3>
+  <p>Texts from your book, chronologically arranged, annotated and cross-referenced...</p>
+</div>
+
+<script>
+function switchLanguage(lang) {
+  const deEntries = document.querySelectorAll('.language.de');
+  const enEntries = document.querySelectorAll('.language.en');
+  if(lang === 'de'){
+    deEntries.forEach(e => e.classList.add('show'));
+    enEntries.forEach(e => e.classList.remove('show'));
+  } else {
+    deEntries.forEach(e => e.classList.remove('show'));
+    enEntries.forEach(e => e.classList.add('show'));
+  }
+}
+</script>
+
+</body>
+</html>
